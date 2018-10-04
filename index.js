@@ -40,8 +40,14 @@ function total() {
     return totalPrice;
   }
 
-function removeFromCart(item) {
-  // write your code here
+function removeFromCart(item, itemName) {
+  for (var i = cart.length -1; i > 0; i--) {
+    if (cart[i].item === itemName[i]) {
+      cart.splice(i)
+    } else if (cart[i].item !== itemName[i]) {
+      return("That item is not in your cart.")
+    }
+  }
 }
 
 function placeOrder(cardNumber) {
